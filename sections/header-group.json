@@ -50,6 +50,56 @@
         "mobile_font_size": 11
       }
     },
+    "custom_annoucement_bar_MpHcYD": {
+      "type": "custom-annoucement-bar",
+      "blocks": {
+        "announcement_9PfiyN": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Eyeliner on Orders Over ₹799!",
+            "link": "",
+            "text_color": "#111111"
+          }
+        },
+        "announcement_j8H9WT": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Eyeliner and Liquid Lipstick on Orders Over ₹1499!",
+            "link": "",
+            "text_color": "#111111"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_9PfiyN",
+        "announcement_j8H9WT"
+      ],
+      "name": "Custom Announcement Bar",
+      "settings": {
+        "enable_marquee": true,
+        "sticky_bar": true,
+        "pause_on_hover": true,
+        "reverse_direction": false,
+        "show_separator": true,
+        "bg_color": "#F3DFD2",
+        "text_color": "#111111",
+        "star_color": "#D5B59D",
+        "separator_icon": "★",
+        "star_opacity": 100,
+        "star_size_desktop": 13,
+        "star_size_mobile": 11,
+        "font_size_desktop": 11,
+        "font_size_mobile": 10,
+        "font_weight": "600",
+        "letter_spacing": 2,
+        "letter_spacing_mobile": 1,
+        "padding_desktop": 7,
+        "padding_mobile": 6,
+        "gap_desktop": 36,
+        "gap_mobile": 24,
+        "marquee_speed": 28
+      }
+    },
     "header": {
       "type": "header",
       "blocks": {
@@ -98,6 +148,7 @@
   },
   "order": [
     "announcement-bar",
+    "custom_annoucement_bar_MpHcYD",
     "header"
   ]
 }
