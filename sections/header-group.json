@@ -97,7 +97,7 @@
         "padding_mobile": 6,
         "gap_desktop": 36,
         "gap_mobile": 24,
-        "marquee_speed": 28
+        "marquee_speed": 50
       }
     },
     "header": {
