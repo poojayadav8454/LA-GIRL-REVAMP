@@ -55,4 +55,4 @@ _site
 /.vscode
 secrets.json
 .jekyll-metadata
-.ruby-version
+.ruby-versionnode_modules/ 
