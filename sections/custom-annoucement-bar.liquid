@@ -1,0 +1,453 @@
+<section
+  id="custom-announcement-bar-{{ section.id }}"
+  class="w-full overflow-hidden {% if section.settings.sticky_bar %}sticky top-0 z-[99]{% endif %}"
+>
+  <style>
+    #custom-announcement-bar-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+      color: {{ section.settings.text_color }};
+      overflow: hidden;
+    }
+
+    #custom-announcement-bar-{{ section.id }} .announcement-inner {
+      width: 100%;
+      overflow: hidden;
+      padding-top: {{ section.settings.padding_desktop }}px;
+      padding-bottom: {{ section.settings.padding_desktop }}px;
+      background: {{ section.settings.bg_color }};
+    }
+
+    #custom-announcement-bar-{{ section.id }} .announcement-track {
+      display: flex;
+      align-items: center;
+      
+      width: max-content;
+      min-width: max-content;
+      animation: announcement-marquee-{{ section.id }} {{ section.settings.marquee_speed }}s linear infinite;
+      will-change: transform;
+    }
+
+    #custom-announcement-bar-{{ section.id }} .announcement-set {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      min-width: 100vw;
+    }
+
+    #custom-announcement-bar-{{ section.id }} .announcement-item {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: {{ section.settings.gap_desktop }}px;
+      padding-right: {{ section.settings.gap_desktop }}px;
+    }
+
+    #custom-announcement-bar-{{ section.id }} .announcement-text {
+      font-size: {{ section.settings.font_size_desktop }}px;
+      font-weight: {{ section.settings.font_weight }};
+      letter-spacing: {{ section.settings.letter_spacing }}px;
+      line-height: 1;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #custom-announcement-bar-{{ section.id }} .announcement-separator {
+      color: {{ section.settings.star_color }};
+      font-size: {{ section.settings.star_size_desktop }}px;
+      line-height: 1;
+      opacity: {{ section.settings.star_opacity | divided_by: 100.0 }};
+      flex-shrink: 0;
+    }
+
+    @keyframes announcement-marquee-{{ section.id }} {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    {% if section.settings.reverse_direction %}
+      @keyframes announcement-marquee-{{ section.id }} {
+        from {
+          transform: translateX(-50%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    {% endif %}
+
+    {% if section.settings.pause_on_hover %}
+      #custom-announcement-bar-{{ section.id }}:hover .announcement-track {
+        animation-play-state: paused;
+      }
+    {% endif %}
+
+    {% unless section.settings.enable_marquee %}
+      #custom-announcement-bar-{{ section.id }} .announcement-track {
+        animation: none;
+        width: 100%;
+        min-width: 100%;
+        justify-content: center;
+      }
+
+      #custom-announcement-bar-{{ section.id }} .announcement-set {
+        min-width: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    {% endunless %}
+
+    @media screen and (max-width: 767px) {
+      #custom-announcement-bar-{{ section.id }} .announcement-inner {
+        padding-top: {{ section.settings.padding_mobile }}px;
+        padding-bottom: {{ section.settings.padding_mobile }}px;
+      }
+
+      #custom-announcement-bar-{{ section.id }} .announcement-item {
+        gap: {{ section.settings.gap_mobile }}px;
+        padding-right: {{ section.settings.gap_mobile }}px;
+      }
+
+      #custom-announcement-bar-{{ section.id }} .announcement-text {
+        font-size: {{ section.settings.font_size_mobile }}px;
+        letter-spacing: {{ section.settings.letter_spacing_mobile }}px;
+      }
+
+      #custom-announcement-bar-{{ section.id }} .announcement-separator {
+        font-size: {{ section.settings.star_size_mobile }}px;
+      }
+    }
+  </style>
+
+  {% assign set_repeat = 2 %}
+  {% assign content_repeat = 8 %}
+
+  {% unless section.settings.enable_marquee %}
+    {% assign set_repeat = 1 %}
+    {% assign content_repeat = 1 %}
+  {% endunless %}
+
+  <div class="announcement-inner">
+    <div class="announcement-track">
+
+      {% for set in (1..set_repeat) %}
+        <div class="announcement-set">
+
+          {% for repeat in (1..content_repeat) %}
+            {% if section.blocks.size > 0 %}
+
+              {% for block in section.blocks %}
+                <div class="announcement-item" {{ block.shopify_attributes }}>
+                  {% if block.settings.link != blank %}
+                    <a
+                      href="{{ block.settings.link }}"
+                      class="announcement-text"
+                      style="color: {{ block.settings.text_color }};"
+                    >
+                      {{ block.settings.text }}
+                    </a>
+                  {% else %}
+                    <span
+                      class="announcement-text"
+                      style="color: {{ block.settings.text_color }};"
+                    >
+                      {{ block.settings.text }}
+                    </span>
+                  {% endif %}
+
+                  {% if section.settings.show_separator %}
+                    <span class="announcement-separator">
+                      {{ section.settings.separator_icon }}
+                    </span>
+                  {% endif %}
+                </div>
+              {% endfor %}
+
+            {% else %}
+
+              <div class="announcement-item">
+                <span class="announcement-text">
+                  Free Eyeliner on Orders Over ₹799!
+                </span>
+                {% if section.settings.show_separator %}
+                  <span class="announcement-separator">
+                    {{ section.settings.separator_icon }}
+                  </span>
+                {% endif %}
+              </div>
+
+              <div class="announcement-item">
+                <span class="announcement-text">
+                  Free Eyeliner and Liquid Lipstick on Orders Over ₹1499!
+                </span>
+                {% if section.settings.show_separator %}
+                  <span class="announcement-separator">
+                    {{ section.settings.separator_icon }}
+                  </span>
+                {% endif %}
+              </div>
+
+            {% endif %}
+          {% endfor %}
+
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_marquee",
+      "label": "Enable moving marquee",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_bar",
+      "label": "Make bar sticky",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_direction",
+      "label": "Reverse direction",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_separator",
+      "label": "Show separator icon",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#F3DFD2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Default text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Separator color",
+      "default": "#D5B59D"
+    },
+    {
+      "type": "text",
+      "id": "separator_icon",
+      "label": "Separator icon",
+      "default": "★"
+    },
+    {
+      "type": "range",
+      "id": "star_opacity",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Separator opacity",
+      "default": 75
+    },
+    {
+      "type": "range",
+      "id": "star_size_desktop",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Separator size desktop",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "star_size_mobile",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Separator size mobile",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "font_size_desktop",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size desktop",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "font_size_mobile",
+      "min": 8,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size mobile",
+      "default": 10
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "default": "600",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "label": "Letter spacing desktop",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing_mobile",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "label": "Letter spacing mobile",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "padding_desktop",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Top bottom padding desktop",
+      "default": 7
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile",
+      "min": 2,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Top bottom padding mobile",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "min": 8,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap desktop",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "min": 8,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Gap mobile",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "marquee_speed",
+      "min": 5,
+      "max": 80,
+      "step": 1,
+      "unit": "s",
+      "label": "Marquee speed",
+      "default": 28
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Free Eyeliner on Orders Over ₹799!"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link optional"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#111111"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Announcement Bar",
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Eyeliner on Orders Over ₹799!"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Free Eyeliner and Liquid Lipstick on Orders Over ₹1499!"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

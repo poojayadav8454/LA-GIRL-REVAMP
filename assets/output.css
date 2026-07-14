@@ -206,6 +206,12 @@
   .sticky {
     position: sticky;
   }
+  .top-0 {
+    top: 0;
+  }
+  .z-\[99\] {
+    z-index: 99;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -286,6 +292,9 @@
   }
   .list-disc {
     list-style-type: disc;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
   }
   .justify-between {
     justify-content: space-between;
