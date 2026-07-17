@@ -9,6 +9,51 @@
  */
 {
   "sections": {
+    "hero_header_banner_WM38Bc": {
+      "type": "hero-header-banner",
+      "name": "hero header banner",
+      "settings": {
+        "eyebrow": "New Collection",
+        "highlight_text": "CHISEL & GLOW:",
+        "heading": "LIFT SCULPT AND SHINE EFFORTLESSLY",
+        "description": "FOUR NEW SHADES OF OUR AWARD-WINNING LIP WHIPS",
+        "desktop_image": "shopify://shop_images/Rectangle_34625241_e5ab7509-84a4-444a-9f90-52f524b307b9.png",
+        "mobile_image": "shopify://shop_images/Rectangle_34625241_e5ab7509-84a4-444a-9f90-52f524b307b9.png",
+        "show_sticker": true,
+        "sticker_image": "shopify://shop_images/Property_1_Variant2.png",
+        "sticker_text": "SHOP NOW WORTH THE HYPE",
+        "sticker_size_desktop": 150,
+        "sticker_left_desktop": 42,
+        "sticker_top_desktop": 67,
+        "sticker_left_mobile": 78,
+        "sticker_top_mobile": 47,
+        "primary_btn_text": "SHOP NOW",
+        "primary_btn_link": "",
+        "show_primary_arrow": true,
+        "primary_btn_bg": "#000000",
+        "primary_btn_text_color": "#ffffff",
+        "primary_btn_border": "#000000",
+        "secondary_btn_text": "VIEW ALL",
+        "secondary_btn_link": "",
+        "secondary_btn_bg": "#F4E8D9",
+        "secondary_btn_text_color": "#555555",
+        "secondary_btn_border": "#BDBDBD",
+        "left_bg_color": "#F4E8D9",
+        "heading_color": "#000000",
+        "highlight_color": "#EC008C",
+        "text_color": "#9A9A9A",
+        "banner_height_desktop": 580,
+        "banner_height_mobile": 360,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
     "slideshow_gHaeJb": {
       "type": "slideshow",
       "blocks": {
@@ -43,7 +88,6 @@
       "block_order": [
         "image_KmK4Eb"
       ],
-      "disabled": true,
       "settings": {
         "allow_transparent_header": false,
         "show_next_section_button": false,
@@ -53,6 +97,129 @@
         "cycle_speed": 5,
         "background": "#000000",
         "controls_color": "#ffffff"
+      }
+    },
+    "rich_text_GM97c3": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_efczCN": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>BUT FIRST, MAKEUP</strong>",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_qynHnn": {
+          "type": "richtext",
+          "settings": {
+            "content": "<h6>May your day be as flawless as YOU are!</h6>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_efczCN",
+        "richtext_qynHnn"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "multi-column": {
+      "type": "multi-column",
+      "blocks": {
+        "column-1": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/this.jpg",
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        },
+        "image_with_text_QWBqm9": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify://shop_images/that.jpg",
+            "title": "",
+            "heading_tag": "h3",
+            "content": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column-1",
+        "image_with_text_QWBqm9"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "columns_per_row": 3,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-arrivals",
+            "products_count": 8,
+            "title": "New Arrivals",
+            "link_url": "shopify://collections/new-arrivals",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": ""
+      }
+    },
+    "image_with_text_overlay_MXPxpJ": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "image_size": "auto",
+        "image": "shopify://shop_images/STRIP_Desktop_1.jpg",
+        "mobile_image": "shopify://shop_images/STRIP_Mobile_1.jpg",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
       }
     },
     "featured_collections_r4d7q6": {
@@ -104,6 +271,39 @@
         "horizontal_spacing_factor": 0.3,
         "vertical_spacing_factor": 0.2,
         "subheading": "You’ll Want These"
+      }
+    },
+    "promotion_post_pMkQ9d": {
+      "type": "promotion-post",
+      "blocks": {
+        "promotion_block_GF9EV4": {
+          "type": "promotion_block",
+          "settings": {
+            "image": "shopify://shop_images/LA_Girl_Website_Images_Lip_Balm.jpg",
+            "heading": "Nourish Your Lips",
+            "description": "Hydrating sheer tint lip balms",
+            "button_link": "shopify://collections/all-products",
+            "button_text": "Shop Now"
+          }
+        },
+        "promotion_block_9bx69K": {
+          "type": "promotion_block",
+          "settings": {
+            "image": "shopify://shop_images/LA_Girl_Website_Images_Body_Gliter.jpg",
+            "heading": "Glitz in Glitter",
+            "description": "Limited edition - long lasting shades",
+            "button_link": "shopify://collections/best-sellers",
+            "button_text": "Shop Now"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_block_GF9EV4",
+        "promotion_block_9bx69K"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "collection-list": {
@@ -193,6 +393,184 @@
         "content": ""
       }
     },
+    "before-after": {
+      "type": "before-after",
+      "blocks": {
+        "before": {
+          "type": "before",
+          "settings": {
+            "color_scheme": "",
+            "text": "Before",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        },
+        "after": {
+          "type": "after",
+          "settings": {
+            "color_scheme": "",
+            "text": "After",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "before",
+        "after"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "Before/after",
+        "content": "<p>Showcase your product benefit by using before/after image comparison.</p>",
+        "cursor_direction": "horizontal",
+        "cursor_initial_position": 50,
+        "cursor_background": "#ffffff",
+        "cursor_arrows_color": "#000000"
+      }
+    },
+    "multiple-media-with-text": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "rotation": 0
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": true,
+        "media_position_desktop": "before_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "center",
+        "media_alignment_offset": 0,
+        "media_mobile_alignment_offset": 0,
+        "text_alignment": "center",
+        "subheading": "About",
+        "title": "Showcase your product",
+        "content": "<p>Write some content about your products, collections or brand. Use image or video to create an impactful layout.</p>",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_1_style": "solid",
+        "button_2_text": "",
+        "button_2_link": "",
+        "button_2_style": "solid"
+      }
+    },
+    "image_card_slider_mhijEp": {
+      "type": "image-card-slider",
+      "blocks": {
+        "step_WihjqT": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify://shop_images/LA_Girl_Website_Images_Blush.jpg",
+            "step_title": "Step 1",
+            "step_description": "Line it on your eye",
+            "step_link": "",
+            "step_button_text": "Shop This Pair"
+          }
+        },
+        "step_ggKRBB": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify://shop_images/LA_Girl_Website_Images_Foundation.jpg",
+            "step_title": "Step 2",
+            "step_description": "Line it on your eye",
+            "step_link": "",
+            "step_button_text": "Shop This Pair"
+          }
+        },
+        "step_Qz46yA": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify://shop_images/LA_Girl_Website_Images_Lip_Haze.jpg",
+            "step_title": "Step 3",
+            "step_description": "Line it on your eye",
+            "step_link": "",
+            "step_button_text": "Shop This Pair"
+          }
+        },
+        "step_EWeHt3": {
+          "type": "step",
+          "settings": {
+            "step_image": "shopify://shop_images/LA_Girl_Website_Images_Blush_0b1e26d6-8670-4403-9120-cd3e5eb82aa3.jpg",
+            "step_title": "Step 4",
+            "step_description": "Line it on your eye",
+            "step_link": "",
+            "step_button_text": "Shop This Pair"
+          }
+        }
+      },
+      "block_order": [
+        "step_WihjqT",
+        "step_ggKRBB",
+        "step_Qz46yA",
+        "step_EWeHt3"
+      ],
+      "disabled": true,
+      "settings": {
+        "main-title": "Shop Your Big 4 Essentials",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_HLWB4z": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9HNXaN": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Heading",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_Rgk3yK": {
+          "type": "richtext",
+          "settings": {
+            "content": "<h2>“Beauty is not about what’s on the outside—it’s what’s inside that radiates”</h2>"
+          }
+        },
+        "subheading_DaHYKc": {
+          "type": "subheading",
+          "settings": {
+            "text": "~Gucci Westman"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9HNXaN",
+        "richtext_Rgk3yK",
+        "subheading_DaHYKc"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "start",
+        "remove_vertical_spacing": false
+      }
+    },
     "video_D3HAtV": {
       "type": "video",
       "blocks": {
@@ -214,6 +592,42 @@
         "mobile_video": "shopify://files/videos/New launch-mobile.mp4",
         "external_video_url": "",
         "text_color": "#ffffff"
+      }
+    },
+    "shop-the-look": {
+      "type": "shop-the-look",
+      "blocks": {
+        "look-1": {
+          "type": "look",
+          "settings": {
+            "image": "shopify://shop_images/8_5502d385-6222-4e7e-9142-b998c4823761.webp",
+            "hot_spots_background": "#ffffff",
+            "product_1": "l-a-gir-l-beauphoria-3pc-holographic-lipgloss-set",
+            "product_1_horizontal_position": 37,
+            "product_1_vertical_position": 18,
+            "product_2": "l-a-girl-beauphoria-1-satin-bronzer-powder-palette",
+            "product_2_horizontal_position": 29,
+            "product_2_vertical_position": 41,
+            "product_3": "l-a-girl-beauphoria-12-color-eye-face-palette",
+            "product_3_horizontal_position": 44,
+            "product_3_vertical_position": 60,
+            "product_4": "l-a-girl-beau-phoria-3pc-glitter-topper-gift-set",
+            "product_4_horizontal_position": 47,
+            "product_4_vertical_position": 90
+          }
+        }
+      },
+      "block_order": [
+        "look-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "subheading": "",
+        "title": "Shop the look",
+        "content": "",
+        "popover_title": "Shop the look"
       }
     },
     "image_collection_products_HR698i": {
@@ -305,13 +719,25 @@
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false
       }
-    }
+    },
+
   },
   "order": [
+    "hero_header_banner_WM38Bc",
     "slideshow_gHaeJb",
+    "rich_text_GM97c3",
+    "multi-column",
+    "featured-collections",
+    "image_with_text_overlay_MXPxpJ",
     "featured_collections_r4d7q6",
+    "promotion_post_pMkQ9d",
     "collection-list",
+    "before-after",
+    "multiple-media-with-text",
+    "image_card_slider_mhijEp",
+    "rich_text_HLWB4z",
     "video_D3HAtV",
+    "shop-the-look",
     "image_collection_products_HR698i",
     "173337955930e93a8e",
     "newsletter",
